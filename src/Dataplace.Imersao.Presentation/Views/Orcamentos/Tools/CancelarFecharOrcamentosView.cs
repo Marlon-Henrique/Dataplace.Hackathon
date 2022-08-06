@@ -108,6 +108,11 @@ namespace Dataplace.Imersao.Presentation.Views.Orcamentos.Tools
    
             // Evento Grid
             gridOrcamento.DataSourceChanged += (object sender, EventArgs e) => TotalLoads();
+
+            if (rangeDate.Date1.Parent is TableLayoutPanel t)
+            {
+                t.Width = 300;
+            }
         }
 
         private void ConfigureButton()

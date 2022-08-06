@@ -390,6 +390,7 @@
             // 
             // lbnTotalizador
             // 
+            this.lbnTotalizador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbnTotalizador.AutoSize = true;
             this.lbnTotalizador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbnTotalizador.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -456,7 +457,7 @@
             this.gbOpcoesData.TabStop = false;
             this.gbOpcoesData.Text = "Opções";
             // 
-            // CancelarFehacrOrcamentosView
+            // CancelarFecharOrcamentosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -473,7 +474,7 @@
             this.Controls.Add(this.btnCarregar);
             this.Controls.Add(this.gridOrcamento);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CancelarFehacrOrcamentosView";
+            this.Name = "CancelarFecharOrcamentosView";
             this.Size = new System.Drawing.Size(1347, 750);
             this.Controls.SetChildIndex(this.gridOrcamento, 0);
             this.Controls.SetChildIndex(this.btnCarregar, 0);
