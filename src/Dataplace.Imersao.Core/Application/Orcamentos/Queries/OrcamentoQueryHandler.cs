@@ -78,16 +78,32 @@ namespace Dataplace.Imersao.Core.Application.Orcamentos.Queries
             var builder = new SqlBuilder();
             var selector = builder.AddTemplate(sql);
 
-
             if (request.Situacao.HasValue)
                 builder.Where("orcamento.StOrcamento = @Situacao", new { Situacao = request.Situacao.Value.ToDataValue()});
 
             if (request.SituacaoList != null && request.SituacaoList.Count > 0)
                 builder.Where($"orcamento.StOrcamento IN ('{string.Join("','", request.SituacaoList.Select(x => x.ToDataValue()))}')");
 
-            if(request.DtInicio.HasValue && request.DtFim.HasValue)
+            if(request.DtInicio.HasValue && request.DtFim.HasValue && request.TipoData == "DO")
                 builder.Where("orcamento.DtOrcamento between @DtInicio AND @DtFim ", new { DtInicio = request.DtInicio.Value.Date, DtFim = request.DtFim.Value.Date.AddDays(1).AddSeconds(-1) });
 
+            if (request.DtInicio.HasValue && request.DtFim.HasValue && request.TipoData == "DF")
+                builder.Where("orcamento.DtFechamento between @DtInicio AND @DtFim ", new { DtInicio = request.DtInicio.Value.Date, DtFim = request.DtFim.Value.Date.AddDays(1).AddSeconds(-1) });
+
+            if (request.DtInicio.HasValue && request.DtFim.HasValue && request.TipoData == "DV")
+                builder.Where("orcamento.DtValidade between @DtInicio AND @DtFim ", new { DtInicio = request.DtInicio.Value.Date, DtFim = request.DtFim.Value.Date.AddDays(1).AddSeconds(-1) });
+
+            if (!string.IsNullOrWhiteSpace(request.CdCliente))
+                builder.Where($"orcamento.CdCliente IN ('{request.CdCliente}')");
+
+            if (!string.IsNullOrWhiteSpace(request.CdVendedor))
+                builder.Where($"orcamento.CdVendedor IN ('{request.CdVendedor}')");
+
+            if (!string.IsNullOrWhiteSpace(request.UserName))
+                builder.Where($"orcamento.Usuario IN ('{request.UserName}')");
+
+            if (!string.IsNullOrWhiteSpace(request.NumOrcamento))
+                builder.Where($"orcamento.NumOrcamento IN ('{request.NumOrcamento}')");
 
             builder.OrderBy("orcamento.DtOrcamento DESC");
 

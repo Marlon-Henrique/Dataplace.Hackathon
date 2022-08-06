@@ -48,7 +48,7 @@ namespace Dataplace.Imersao.App
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<MainView>();
-            services.AddSingleton<CancelarFehacrOrcamentosView>();
+            services.AddSingleton<CancelarFecharOrcamentosView>();
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 

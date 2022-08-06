@@ -31,10 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.C1Excel.2, Version=2.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04" />
     <Reference Include="C1.Win.C1Command.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1FlexGrid.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1Input.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a" />
+    <Reference Include="C1.Win.C1SuperTooltip.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.Win.C1TrueDBGrid.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=75ae3fb0e2b1e0da" />
     <Reference Include="C1.Win.Calendar.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="Dataplace.Core.Lib, Version=1.17.0.10, Culture=neutral, processorArchitecture=MSIL">
@@ -67,7 +69,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -104,11 +108,11 @@
     <Compile Include="Views\Orcamentos\Reports\OrcamentoReportView.Designer.cs">
       <DependentUpon>OrcamentoReportView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Orcamentos\Tools\CancelarFehacrOrcamentosView.cs">
+    <Compile Include="Views\Orcamentos\Tools\CancelarFecharOrcamentosView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Orcamentos\Tools\CancelarFehacrOrcamentosView.Designer.cs">
-      <DependentUpon>CancelarFehacrOrcamentosView.cs</DependentUpon>
+    <Compile Include="Views\Orcamentos\Tools\CancelarFecharOrcamentosView.Designer.cs">
+      <DependentUpon>CancelarFecharOrcamentosView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -128,8 +132,8 @@
     <EmbeddedResource Include="Views\Orcamentos\Reports\OrcamentoReportView.resx">
       <DependentUpon>OrcamentoReportView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Orcamentos\Tools\CancelarFehacrOrcamentosView.resx">
-      <DependentUpon>CancelarFehacrOrcamentosView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Orcamentos\Tools\CancelarFecharOrcamentosView.resx">
+      <DependentUpon>CancelarFecharOrcamentosView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
